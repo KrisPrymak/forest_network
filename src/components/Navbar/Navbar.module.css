@@ -1,0 +1,9 @@
+.navbar {
+    background-color: #FB6376;
+    grid-area: navbar;
+}
+
+.navbar div {
+    margin: 15px;
+    font-size: 20px;
+}

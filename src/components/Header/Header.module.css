@@ -1,0 +1,41 @@
+.header {
+    background-color: #0197F6;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 50px;
+    margin: 5px;
+    margin-left: 15px;
+}
+
+.colors {
+    display: flex;
+    font-weight: bold;
+}
+
+.colors li {
+    margin-right: 10px;
+}
+
+.colors li:nth-child(1) {
+    color: #FFFFFF;
+}
+
+.colors li:nth-child(2) {
+    color: #FB6376;
+}
+
+.colors li:nth-child(3) {
+    color: #F2DDDD;
+}
+
+.colors li:nth-child(4) {
+    color: blue;
+}
+
+.colors li:nth-child(5) {
+    color: #000000;
+}
