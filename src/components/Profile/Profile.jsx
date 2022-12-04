@@ -4,7 +4,7 @@ import s from './Profile.module.css'
 
 const Profile = () => {
     return (
-        <div className={s.profile}>
+        <div>
             <div>
                 <img className={s.landscape} src="http://hubertravel.pl/images/destynacje/Nowa-Zelandia.jpg" alt="landscape" />
             </div>
