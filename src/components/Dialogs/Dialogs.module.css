@@ -9,24 +9,8 @@
     border-right: 1px solid #000;
 }
 
-.dialog {
-    margin-bottom: 15px;
-}
-
-.dialog a{
-    color: #000;
-}
-
-.active a{
-    color: #fff;
-}
-
 .messages {
     padding-left: 10px;
     background-color: rgba(1, 151, 246, .2);
     margin-left: 20px;
-}
-
-.message {
-    margin-bottom: 8px;
 }

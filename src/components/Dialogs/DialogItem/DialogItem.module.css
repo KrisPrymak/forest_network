@@ -1,0 +1,11 @@
+.dialog {
+    margin-bottom: 15px;
+}
+
+.dialog a{
+    color: #000;
+}
+
+.active a{
+    color: #fff;
+}
