@@ -6,3 +6,12 @@
 .myPosts {
     margin: 15px;
 }
+
+.button {
+    background-color: rgba(251, 101, 118, .5);
+    border-radius: 9999px;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}

@@ -3,6 +3,11 @@ import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 const MyPosts = () => {
+  let postData = [
+    {id: 3, message: 'it is my first post', likesCount: 0},
+    {id: 2, message: 'hello how are you', likesCount: 120},
+    {id: 1, message: 'lalolalolaolaod', likesCount: 10},
+  ]
   return (
     <div className={s.myPosts}>
       <h3>My posts</h3>
@@ -11,13 +16,13 @@ const MyPosts = () => {
           <textarea></textarea>
         </div>
         <div>
-          <button>Add post</button>
+          <button className={s.button}>Add post</button>
         </div>
       </div>
       <div>
-        <Post message="it is my first post" />
-        <Post message="hello how are you" />
-        <Post message="lalolalolaolaod" />
+        <Post message="it is my first post" likesCount='0'/>
+        <Post message="hello how are you" likesCount='120'/>
+        <Post message="lalolalolaolaod" likesCount='10'/>
       </div>
     </div>
   );

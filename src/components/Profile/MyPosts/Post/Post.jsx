@@ -6,7 +6,9 @@ const Post = (props) => {
         <div className={s.post}>
             <img className={s.ava} src="https://cdn-icons-png.flaticon.com/512/906/906517.png" alt="ava" />
             {props.message}
-            <div>Likes</div>
+            <div className={s.likes}>Likes
+                <span className={s.likesCount}>{props.likesCount}</span>
+            </div>
         </div>
     );
 };

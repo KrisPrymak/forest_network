@@ -19,6 +19,20 @@ const Dialogs = () => {
     );
   };
 
+  let dialogsData = [ 
+    {id: 1, name: 'Kesha'},
+    {id: 2, name: 'Lalka'},
+    {id: 3, name: 'Musya'},
+    {id: 4, name: 'Kiska'},
+    {id: 5, name: 'Gosha'},
+  ]
+
+  let messagesData = [
+    {id: 1, message: 'hello, how are you'},
+    {id: 1, message: 'Yo yo yo'},
+    {id: 1, message: 'lalalal lolo'},
+  ]
+
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItems}>
