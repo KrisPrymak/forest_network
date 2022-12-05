@@ -1,23 +1,21 @@
 .navbar {
-  background-color: #fb6376;
-  grid-area: navbar;
+    background-color: #FB6376;
+    grid-area: navbar;
 }
 
 .navbar div {
-  margin: 15px;
-  font-size: 20px;
+    margin: 15px;
+    font-size: 20px;
 }
 
-.item,
-.active {
-  text-decoration: none;
-  font-weight: bold;
+.item, .active {
+    font-weight: bold;
 }
 
-.item {
-  color: #fff;
+.item{
+    color: #fff;
 }
 
-.active {
-  color: #000000;
+.active{
+    color: #000000;
 }

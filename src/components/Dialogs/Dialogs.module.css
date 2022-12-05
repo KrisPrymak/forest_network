@@ -9,6 +9,14 @@
     margin-bottom: 15px;
 }
 
+.dialog a{
+    color: #000;
+}
+
+.active a{
+    color: #fff;
+}
+
 .messages {
     border-left: 1px solid #000;
     padding-left: 25px;
