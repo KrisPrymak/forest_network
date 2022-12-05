@@ -7,13 +7,17 @@ const MyPosts = () => {
     <div className={s.myPosts}>
       <h3>My posts</h3>
       <div className={s.addPost}>
-        <textarea></textarea>
-        <button>Add post</button>
+        <div>
+          <textarea></textarea>
+        </div>
+        <div>
+          <button>Add post</button>
+        </div>
       </div>
       <div>
-        <Post message='it is my first post'/>
-        <Post message='hello how are you'/>
-        <Post message='lalolalolaolaod'/>
+        <Post message="it is my first post" />
+        <Post message="hello how are you" />
+        <Post message="lalolalolaolaod" />
       </div>
     </div>
   );
