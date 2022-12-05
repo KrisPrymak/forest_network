@@ -1,8 +1,12 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 3fr 8fr;
+    grid-template-columns: 2fr 8fr;
     padding: 15px;
     font-size: 20px;
+}
+
+.dialogsItems {
+    border-right: 1px solid #000;
 }
 
 .dialog {
@@ -18,8 +22,9 @@
 }
 
 .messages {
-    border-left: 1px solid #000;
-    padding-left: 25px;
+    padding-left: 10px;
+    background-color: rgba(1, 151, 246, .2);
+    margin-left: 20px;
 }
 
 .message {
