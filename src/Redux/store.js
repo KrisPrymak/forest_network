@@ -6,7 +6,7 @@ let store = {
         { id: 2, message: "pumpimpampampimpum", likesCount: 120 },
         { id: 1, message: "lalolalolaolaod", likesCount: 10 },
       ],
-      newPostText: '',
+      newPostText: "",
     },
     dialogsPage: {
       dialogs: [
@@ -16,7 +16,7 @@ let store = {
         { id: 4, name: "Kiska" },
         { id: 5, name: "Gosha" },
       ],
-  
+
       messages: [
         { id: 1, message: "hello, how are you" },
         { id: 1, message: "Yo yo yo" },
@@ -24,27 +24,30 @@ let store = {
       ],
     },
   },
-  getState() {
-    return this._state
-  },
-  _callSubscriber() {
+  _callSubscriber() {},
 
-  },
-  addPost() {
-    let newPost = {
-      id: 4, message: this._state.profilePage.newPostText, likesCount: 0
-    }
-    this._state.profilePage.posts.unshift(newPost);
-    this._state.profilePage.newPostText = '';
-    this._callSubscriber(this._state)
-  },
-  updateNewPostText(text) {
-    this._state.profilePage.newPostText = text;
-    this._callSubscriber(this._state)
+  getState() {
+    return this._state;
   },
   subscribe(observer) {
     this._callSubscriber = observer;
   },
-}
+
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      let newPost = {
+        id: 4,
+        message: this._state.profilePage.newPostText,
+        likesCount: 0,
+      };
+      this._state.profilePage.posts.unshift(newPost);
+      this._state.profilePage.newPostText = "";
+      this._callSubscriber(this._state);
+    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    }
+  },
+};
 
 export default store;
