@@ -48,5 +48,5 @@ let store = {
     this._callSubscriber(this._state);
   },
 };
-
+ 
 export default store;
