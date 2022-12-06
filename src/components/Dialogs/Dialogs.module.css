@@ -11,6 +11,20 @@
 
 .messages {
     padding-left: 10px;
-    background-color: rgba(1, 151, 246, .2);
     margin-left: 20px;
+}
+
+.messagesText {
+    background-color: rgba(1, 151, 246, .2);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: rgba(251, 101, 118, .5);
+    border-radius: 9999px;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
 }

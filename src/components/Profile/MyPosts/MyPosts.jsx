@@ -25,7 +25,10 @@ const MyPosts = (props) => {
       <h3>My posts</h3>
       <div className={s.addPost}>
         <div>
-          <textarea onChange={onPostChange} ref={newPostElement} value={props.profilePage.newPostText}/>
+          <textarea 
+          onChange={onPostChange} 
+          placeholder='tell anything...'
+          ref={newPostElement} value={props.profilePage.newPostText}/>
         </div>
         <div>
           <button onClick={addPost} className={s.button}>Add post</button>
