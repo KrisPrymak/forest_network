@@ -6,17 +6,39 @@
 }
 
 .dialogsItems {
-    border-right: 1px solid #000;
 }
 
 .messages {
-    padding-left: 10px;
-    margin-left: 20px;
+    background-color: antiquewhite;
+    border-radius: 50px;
+    padding: 10px 20px 10px 30px;
+    margin: auto 20px;
 }
 
 .messagesText {
-    background-color: rgba(1, 151, 246, .2);
+    display: flex;
+    flex-direction: column;
+}
+
+.messagesText>*:nth-child(even) {
+    align-self: end;
+}
+
+.addMessage {
+    display: flex;
+    flex-direction: column;
+}
+
+.addMessage>*:last-child {
+    align-self: flex-end
+}
+
+.textarea {
+    width: 100%;
+    border: none;
+    border-radius: 20px;
     padding: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 

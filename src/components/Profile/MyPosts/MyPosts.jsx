@@ -26,6 +26,7 @@ const MyPosts = (props) => {
       <div className={s.addPost}>
         <div>
           <textarea 
+          className={s.textarea}
           onChange={onPostChange} 
           placeholder='tell anything...'
           ref={newPostElement} value={props.profilePage.newPostText}/>
