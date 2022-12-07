@@ -50,3 +50,5 @@ export const updateNewMessageBodyCreator = (body) => {
 };
 
 export default dialogsReducer;
+
+//test
