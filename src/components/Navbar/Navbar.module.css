@@ -14,8 +14,10 @@
 
 .item{
     color: #fff;
+    cursor: pointer;
 }
 
 .active{
     color: #000000;
+    cursor: default;
 }
