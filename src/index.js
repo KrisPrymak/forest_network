@@ -24,4 +24,4 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-window.store = store;
+window.state = store.getState().musicPage;
