@@ -6,6 +6,7 @@ let initialState = {
   users: []
 };
 
+
 let usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case FOLLOW:
