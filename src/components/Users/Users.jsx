@@ -4,13 +4,14 @@ import s from "./Users.module.css";
 import userAvatar from "./../../assets/images/userAvatar.png";
 
 class Users extends React.Component {
-  constructor(props) {
-    super(props);
-    axios.get('https://social-network.samuraijs.com/api/1.0/users')
-          .then(response => {
-            props.setUsers(response.data.items);
-          })
+  componentDidMount() {
+    axios
+      .get("https://social-network.samuraijs.com/api/1.0/users")
+      .then((response) => {
+        this.props.setUsers(response.data.items);
+      });
   }
+
   render() {
     return (
       <div className={s.users}>
@@ -61,50 +62,6 @@ class Users extends React.Component {
     );
   }
 }
-
-// const Users = (props) => {
-
-//  let getUsers = () => {
-//   if (props.users.length === 0) {
-//     axios.get('https://social-network.samuraijs.com/api/1.0/users')
-//           .then(response => {
-//             props.setUsers(response.data.items);
-//           })
-//   }
-//  }
-
-//   return <div className={s.users}>
-//     <button onClick={getUsers}>Get users</button>
-//     {
-//     props.users.map((u) => (
-//       <div className={s.user}>
-//         <div className={s.left}>
-//           <img className={s.ava} src={u.photos.small ? u.photos.small : userAvatar} alt="ava" />
-//           <div>
-//           {u.followed ? (
-//             <button className={s.unfollow} onClick={() => {props.unfollow(u.id)}}>
-//               Удалить из друзей
-//             </button>
-//           ) : (
-//             <button className={s.follow} onClick={() => {props.follow(u.id)}}>
-//               Добавить в друзья
-//             </button>
-//           )}
-//           </div>
-//         </div>
-//         <div className={s.right}>
-//           <div className={s.userInfo}>
-//             <p className={s.name}>{u.name}</p>
-//             {/* <p
-//               className={s.location}
-//             >{`${u.location.city}, ${u.location.country}`}</p> */}
-//           </div>
-//           <p className={s.status}>{u.status ? u.status : 'hey, i dont have a status'}</p>
-//         </div>
-//       </div>
-//     ))
-//   }</div>;
-// };
 
 export default Users;
 
