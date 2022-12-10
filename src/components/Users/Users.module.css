@@ -80,6 +80,21 @@
     border-radius: 7px;
 }
 
+.pages {
+    margin-bottom: 20px;
+}
+
+.pages span {
+    margin-right: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.pages .selectedPage {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 
 
 
