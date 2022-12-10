@@ -1,32 +1,11 @@
-import axios from "axios";
-import React from "react";
-import s from "./Users.module.css";
+import React from 'react';
+import s from './Users.module.css';
 import userAvatar from "./../../assets/images/userAvatar.png";
 
-class Users extends React.Component {
-  componentDidMount() {
-    axios
-      .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-      .then((response) => {
-        this.props.setUsers(response.data.items);
-        this.props.setTotalUsersCount(response.data.totalCount);
-      });
-  }
-
-  onPageChanged = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber);
-
-    axios
-      .get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
-      .then((response) => {
-        this.props.setUsers(response.data.items);
-      });
-  }
-
-  render() {
-
-    let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+const Users = (props) => {
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
+
     for (let i = 1; i <= pagesCount; i++) {
       pages.push(i);
     }
@@ -35,70 +14,69 @@ class Users extends React.Component {
       let newPages = [...pages.slice(0, 5), '...', ...pages.slice(-5)];
       pages = newPages;
     }
-
+    
     return (
-      <div className={s.users}>
-
-        <div className={s.pages}>
-          {pages.map(p => {
-            return (
-              <span className={ this.props.currentPage === p && s.selectedPage } onClick={() => { this.onPageChanged(p) }} >{p}</span>
-            )
-          })}
-
-        </div>
-
-        {this.props.users.map((u) => (
-          <div className={s.user}>
-            <div className={s.left}>
-              <img
-                className={s.ava}
-                src={u.photos.small ? u.photos.small : userAvatar}
-                alt="ava"
-              />
-              <div>
-                {u.followed ? (
-                  <button
-                    className={s.unfollow}
-                    onClick={() => {
-                      this.props.unfollow(u.id);
-                    }}
-                  >
-                    Удалить из друзей
-                  </button>
-                ) : (
-                  <button
-                    className={s.follow}
-                    onClick={() => {
-                      this.props.follow(u.id);
-                    }}
-                  >
-                    Добавить в друзья
-                  </button>
-                )}
-              </div>
-            </div>
-            <div className={s.right}>
-              <div className={s.userInfo}>
-                <p className={s.name}>{u.name}</p>
-                {/* <p
-                  className={s.location}
-                >{`${u.location.city}, ${u.location.country}`}</p> */}
-              </div>
-              <p className={s.status}>
-                {u.status ? u.status : "hey, i dont have a status"}
-              </p>
-            </div>
+        <div className={s.users}>
+  
+          <div className={s.pages}>
+            {pages.map(p => {
+              return (
+                <span className={ props.currentPage === p && s.selectedPage } onClick={() => { props.onPageChanged(p) }} >{p}</span>
+              )
+            })}
+  
           </div>
-        ))}
-      </div>
-    );
-  }
-}
+  
+          {props.users.map((u) => (
+            <div className={s.user}>
+              <div className={s.left}>
+                <img
+                  className={s.ava}
+                  src={u.photos.small ? u.photos.small : userAvatar}
+                  alt="ava"
+                />
+                <div>
+                  {u.followed ? (
+                    <button
+                      className={s.unfollow}
+                      onClick={() => {
+                        props.unfollow(u.id);
+                      }}
+                    >
+                      Удалить из друзей
+                    </button>
+                  ) : (
+                    <button
+                      className={s.follow}
+                      onClick={() => {
+                        props.follow(u.id);
+                      }}
+                    >
+                      Добавить в друзья
+                    </button>
+                  )}
+                </div>
+              </div>
+              <div className={s.right}>
+                <div className={s.userInfo}>
+                  <p className={s.name}>{u.name}</p>
+                  {/* <p
+                    className={s.location}
+                  >{`${u.location.city}, ${u.location.country}`}</p> */}
+                </div>
+                <p className={s.status}>
+                  {u.status ? u.status : "hey, i dont have a status"}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+};
 
 export default Users;
 
-// let usersArray = [
+// let hardcoreInitialUsers = [
 //   {
 //     id: 1,
 //     photoUrl: "https://cdn-icons-png.flaticon.com/512/8055/8055943.png",
