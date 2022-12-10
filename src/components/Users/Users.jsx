@@ -14,7 +14,7 @@ const Users = (props) => {
       let newPages = [...pages.slice(0, 5), '...', ...pages.slice(-5)];
       pages = newPages;
     }
-    
+
     return (
         <div className={s.users}>
   
@@ -62,7 +62,7 @@ const Users = (props) => {
                   <p className={s.name}>{u.name}</p>
                   {/* <p
                     className={s.location}
-                  >{`${u.location.city}, ${u.location.country}`}</p> */}
+                    >{`${u.location.city}, ${u.location.country}`}</p> */}
                 </div>
                 <p className={s.status}>
                   {u.status ? u.status : "hey, i dont have a status"}
@@ -70,6 +70,8 @@ const Users = (props) => {
               </div>
             </div>
           ))}
+
+          <div>Total accounts: {props.totalUsersCount}</div>
         </div>
       );
 };
