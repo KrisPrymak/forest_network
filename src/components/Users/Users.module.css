@@ -80,6 +80,11 @@
     border-radius: 7px;
 }
 
+.statusImg {
+    width: 20px;
+    margin-right: 10px;
+}
+
 .pages {
     margin-bottom: 20px;
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import s from './Users.module.css';
 import userAvatar from "./../../assets/images/userAvatar.png";
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+import statusImg from './../../assets/images/statusimg.png';
 
 const Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -22,7 +24,10 @@ const Users = (props) => {
           <div className={s.pages}>
             {pages.map(p => {
               return (
-                <span className={ props.currentPage === p && s.selectedPage } onClick={() => { props.onPageChanged(p) }} >{p}</span>
+                <span className={ props.currentPage === p && s.selectedPage } onClick={() => { 
+                  
+                
+                  props.onPageChanged(p) }} >{p}</span>
               )
             })}
   
@@ -41,21 +46,39 @@ const Users = (props) => {
                 <div>
                   {u.followed ? (
                     <button
-                      className={s.unfollow}
-                      onClick={() => {
-                        props.unfollow(u.id);
+                    className={s.unfollow}
+                    onClick={() => {
+                      axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                        withCredentials: true,
+                        headers: {
+                          'API-KEY': '3e9f6ca8-3514-4975-8e54-6b73b971a298',
+                        }})
+                        .then(response => {
+                          if (response.data.resultCode === 0) {
+                            props.unfollow(u.id);
+                          }
+                        })
                       }}
-                    >
-                      Удалить из друзей
+                  >
+                      Отписка
                     </button>
                   ) : (
                     <button
                       className={s.follow}
                       onClick={() => {
-                        props.follow(u.id);
-                      }}
+                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                          withCredentials: true,
+                          headers: {
+                            'API-KEY': '3e9f6ca8-3514-4975-8e54-6b73b971a298',
+                          }})
+                          .then(response => {
+                            if (response.data.resultCode === 0) {
+                              props.follow(u.id);
+                            }
+                          })
+                        }}
                     >
-                      Добавить в друзья
+                      Подписаться
                     </button>
                   )}
                 </div>
@@ -68,7 +91,8 @@ const Users = (props) => {
                     >{`${u.location.city}, ${u.location.country}`}</p> */}
                 </div>
                 <p className={s.status}>
-                  {u.status ? u.status : "hey, i dont have a status"}
+                <img className={s.statusImg} src={statusImg} alt="statusImg" />
+                  {u.status ? u.status : '...'}
                 </p>
               </div>
             </div>
