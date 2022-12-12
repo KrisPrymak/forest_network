@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import React from "react";
 import axios from "axios";
 import Users from "./Users";
-import { followAC, unfollowAC, setUsersAC, setCurrentPageAC, setTotalUsersCountAC, toggleIsFetchingAC } from "./../../Redux/usersReducer";
+import { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching } from "./../../Redux/usersReducer";
 import Preloader from "../commons/Preloader/Preloader";
 
 class UsersContAPI extends React.Component {
@@ -27,21 +27,6 @@ class UsersContAPI extends React.Component {
         this.props.toggleIsFetching(false);
       });
   }
-
-  // isFetching = (fetchValue) => {
-  //     if (this.props.isFetching) {
-  //       return <Preloader />
-  //   } else {
-  //     return <Users totalUsersCount={this.props.totalUsersCount}
-  //                 pageSize={this.props.pageSize}
-  //                 currentPage={this.props.currentPage}
-  //                 onPageChanged={this.onPageChanged}
-  //                 users={this.props.users}
-  //                 unfollow={this.props.unfollow}
-  //                 follow={this.props.follow}
-  //   />
-  //   }
-  // }
 
   render() {
 
@@ -69,29 +54,6 @@ let mapStatetoProps = (state) => {
   };
 };
 
-let mapDispatchtoProps = (dispatch) => {
-  return {
-    follow: (userId) => {
-      dispatch(followAC(userId));
-    },
-    unfollow: (userId) => {
-      dispatch(unfollowAC(userId));
-    },
-    setUsers: (usersArray) => {
-      dispatch(setUsersAC(usersArray));
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(setCurrentPageAC(pageNumber));
-    },
-    setTotalUsersCount: (totalCount) => {
-      dispatch(setTotalUsersCountAC(totalCount));
-    },
-    toggleIsFetching: (isFetching) => {
-      dispatch(toggleIsFetchingAC(isFetching));
-    }
-  };
-};
-
-const UsersContainer = connect(mapStatetoProps, mapDispatchtoProps)(UsersContAPI);
+const UsersContainer = connect(mapStatetoProps, {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching})(UsersContAPI);
 
 export default UsersContainer;

@@ -3,6 +3,31 @@
     grid-area: header;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.loginCl {
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, .3);
+    padding: 7px 15px;
+    margin-right: 20px;
+}
+
+.loginCl:hover {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.loginCl:active {
+    background-color: rgba(150, 150, 150, 0.2);
+}
+
+.loginName {
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .icon {
