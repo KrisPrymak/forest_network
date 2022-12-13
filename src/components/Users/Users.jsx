@@ -3,7 +3,6 @@ import s from "./Users.module.css";
 import userAvatar from "./../../assets/images/userAvatar.png";
 import { NavLink } from "react-router-dom";
 import statusImg from "./../../assets/images/statusimg.png";
-import { usersAPI } from "./../../api/api";
 
 const Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -23,7 +22,7 @@ const Users = (props) => {
       <div className={s.pages}>
         {pages.map((p) => {
           return (
-            <span
+            <span 
               className={props.currentPage === p && s.selectedPage}
               onClick={() => {
                 props.onPageChanged(p);
@@ -50,13 +49,7 @@ const Users = (props) => {
                 <button disabled={props.followingInProgress.some(p => p === u.id)}
                   className={s.unfollow}
                   onClick={() => {
-                    props.toggleIsFollowingInProgress(true, u.id)
-                    usersAPI.deleteFollow(u.id).then((data) => {
-                      if (data.resultCode === 0) {
-                        props.unfollow(u.id);
-                      }
-                      props.toggleIsFollowingInProgress(false, u.id)
-                    });
+                    props.unfollow(u.id);
                   }}
                 >
                   Отписка
@@ -65,13 +58,7 @@ const Users = (props) => {
                 <button disabled={props.followingInProgress.some(p => p === u.id)}
                   className={s.follow}
                   onClick={() => {
-                    props.toggleIsFollowingInProgress(true, u.id)
-                    usersAPI.postFollow(u.id).then((data) => {
-                      if (data.resultCode === 0) {
-                        props.follow(u.id);
-                      }
-                      props.toggleIsFollowingInProgress(false, u.id)
-                    });
+                    props.follow(u.id);
                   }}
                 >
                   Подписаться
