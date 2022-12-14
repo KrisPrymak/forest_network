@@ -17,11 +17,6 @@ const Navbar = () => {
         </NavLink>
       </div>
       <div>
-        <NavLink to="/News" className={activeItemClass}>
-          News
-        </NavLink>
-      </div>
-      <div>
         <NavLink to="/music" className={activeItemClass}>
           Music
         </NavLink>

@@ -10,6 +10,8 @@ import {
   getUsers
 } from "./../../Redux/usersReducer";
 import Preloader from "../commons/Preloader/Preloader";
+import { compose } from "redux";
+import { withAuthNavigate } from "../../hoc/withAuthNavigate";
 
 class UsersContAPI extends React.Component {
   componentDidMount() {
@@ -51,13 +53,14 @@ let mapStatetoProps = (state) => {
   };
 };
 
-const UsersContainer = connect(mapStatetoProps, {
-  follow,
-  unfollow,
-  setUsers,
-  setCurrentPage,
-  toggleIsFollowingInProgress,
-  getUsers
-})(UsersContAPI);
-
-export default UsersContainer;
+export default compose(
+  connect(mapStatetoProps, {
+    follow,
+    unfollow,
+    setUsers,
+    setCurrentPage,
+    toggleIsFollowingInProgress,
+    getUsers
+  }),
+  withAuthNavigate
+)(UsersContAPI);

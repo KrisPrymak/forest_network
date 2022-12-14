@@ -4,6 +4,8 @@ import Profile from "./Profile";
 import { setUserProfile } from "./../../Redux/profileReducer";
 import { Navigate, useParams } from "react-router-dom";
 import { getUserProfile } from "./../../Redux/profileReducer";
+import { compose } from "redux";
+import { withAuthNavigate } from "../../hoc/withAuthNavigate";
 
 export function withRouter(Children) {
   return (props) => {
@@ -13,22 +15,16 @@ export function withRouter(Children) {
 }
 
 class ProfileContainer extends React.Component {
-
   componentDidMount() {
     let userId = this.props.match.params.userId;
     if (!userId) {
-        userId = 2;
+      userId = 2;
     }
     this.props.getUserProfile(userId);
   }
 
   render() {
-
-    if (this.props.isAuth) {
-      return <Navigate to='/login'/>
-    }
-
-    return <Profile {...this.props} />
+    return <Profile {...this.props} />;
   }
 }
 
@@ -39,6 +35,7 @@ let mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { setUserProfile, getUserProfile })(
-  withRouter(ProfileContainer)
-);
+export default compose(
+  connect(mapStateToProps, { setUserProfile, getUserProfile }),
+  withRouter
+)(ProfileContainer);
