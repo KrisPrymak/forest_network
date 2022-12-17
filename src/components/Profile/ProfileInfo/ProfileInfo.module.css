@@ -13,14 +13,17 @@
     width: 200px;
 }
 
-.contacts {
-    margin-left: 15px;
-}
-
 .contactsTitle {
     font-size: 23px;
     margin-bottom: 10px;
     font-weight: 500;
+}
+
+.textInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 15px;
 }
 
 .socialsName {

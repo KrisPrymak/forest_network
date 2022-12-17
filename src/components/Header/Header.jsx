@@ -5,11 +5,13 @@ import { NavLink } from "react-router-dom";
 const Header = (props) => {
   return (
     <div className={s.header}>
-      <img
-        className={s.icon}
-        src="https://cdn-icons-png.flaticon.com/512/9115/9115806.png"
-        alt="icon"
-      />
+      <NavLink to="/profile">
+        <img
+          className={s.icon}
+          src="https://cdn-icons-png.flaticon.com/512/9115/9115806.png"
+          alt="icon"
+        />
+      </NavLink>
       <ul className={s.colors}>
         <li>#FFFFFF</li>
         <li>#FB6376</li>

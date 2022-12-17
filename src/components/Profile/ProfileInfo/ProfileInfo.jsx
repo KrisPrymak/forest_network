@@ -2,11 +2,13 @@ import React from "react";
 import s from "./ProfileInfo.module.css";
 import Preloader from "./../../commons/Preloader/Preloader";
 import defaultAva from './../../../assets/images/userAvatar.png';
+import { ProfileStatus } from "./ProfileStatus";
 
 const ProfileInfo = (props) => {
   if (props.profile == null) {
     return <Preloader />;
   }
+  let status = 'Hey i like it';
 
   return (
     <div>
@@ -20,6 +22,7 @@ const ProfileInfo = (props) => {
       <div className={s.avaDesc}>
         <img className={s.ava} src={props.profile.photos.large ? props.profile.photos.large : defaultAva} alt="avatar" />
 
+        <div className={s.textInfo}>
         <ul className={s.contacts}>
           <div className={s.contactsTitle}>Contacts</div>
           {Object.entries(props.profile.contacts).map(c => {
@@ -28,6 +31,8 @@ const ProfileInfo = (props) => {
             }
           })}
         </ul>
+        <ProfileStatus status={status}/>
+        </div>
       </div>
     </div>
   );

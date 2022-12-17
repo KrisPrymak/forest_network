@@ -26,7 +26,7 @@ class UsersContAPI extends React.Component {
     return (
       <>
         {this.props.isFetching && <Preloader />}
-        <Users
+      <Users
           totalUsersCount={this.props.totalUsersCount}
           pageSize={this.props.pageSize}
           currentPage={this.props.currentPage}
@@ -36,6 +36,7 @@ class UsersContAPI extends React.Component {
           follow={this.props.follow}
           toggleIsFollowingInProgress={this.props.toggleIsFollowingInProgress}
           followingInProgress={this.props.followingInProgress}
+          setCurrentPage={this.props.setCurrentPage}
         />
       </>
     );
@@ -60,7 +61,7 @@ export default compose(
     setUsers,
     setCurrentPage,
     toggleIsFollowingInProgress,
-    getUsers
+    getUsers,
   }),
   withAuthNavigate
 )(UsersContAPI);

@@ -2,10 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import Profile from "./Profile";
 import { setUserProfile } from "./../../Redux/profileReducer";
-import { Navigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getUserProfile } from "./../../Redux/profileReducer";
 import { compose } from "redux";
-import { withAuthNavigate } from "../../hoc/withAuthNavigate";
 
 export function withRouter(Children) {
   return (props) => {
@@ -15,13 +14,26 @@ export function withRouter(Children) {
 }
 
 class ProfileContainer extends React.Component {
-  componentDidMount() {
+
+  redirectToMainUser() {
     let userId = this.props.match.params.userId;
-    if (!userId) {
-      userId = 2;
+    if(!userId) {
+        userId = 27081;
     }
     this.props.getUserProfile(userId);
+}
+
+  componentDidMount() {
+    this.redirectToMainUser();
   }
+
+  componentDidUpdate(prevProps){
+    if(this.props.isMain !== prevProps.isMain) {
+        if(this.props.isMain){
+            this.redirectToMainUser();
+        }
+    }
+}
 
   render() {
     return <Profile {...this.props} />;
