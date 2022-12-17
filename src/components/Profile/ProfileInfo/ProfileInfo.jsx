@@ -8,17 +8,16 @@ const ProfileInfo = (props) => {
   if (props.profile == null) {
     return <Preloader />;
   }
-  let status = 'Hey i like it';
 
   return (
     <div>
-      <div>
+      {/* <div>
         <img
           className={s.landscape}
           src="http://hubertravel.pl/images/destynacje/Nowa-Zelandia.jpg"
           alt="landscape"
         />
-      </div>
+      </div> */}
       <div className={s.avaDesc}>
         <img className={s.ava} src={props.profile.photos.large ? props.profile.photos.large : defaultAva} alt="avatar" />
 
@@ -31,7 +30,7 @@ const ProfileInfo = (props) => {
             }
           })}
         </ul>
-        <ProfileStatus status={status}/>
+        <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
         </div>
       </div>
     </div>
