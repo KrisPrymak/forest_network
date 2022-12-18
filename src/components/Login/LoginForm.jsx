@@ -11,6 +11,16 @@ const LoginForm = (props) => {
   const maxLength30 = maxLengthCreator(30);
   return (
     <form className={s.form} onSubmit={props.handleSubmit}>
+      {props.error && (
+        <div className={s.commonError}>
+          <img
+            className={s.errorImg}
+            src="https://cdn-icons-png.flaticon.com/512/6979/6979061.png"
+            alt="icon"
+          />
+          {props.error}
+        </div>
+      )}
       <Field
         component={Input}
         name={"email"}
@@ -22,11 +32,11 @@ const LoginForm = (props) => {
         name={"password"}
         placeholder={"password"}
         validate={[required, maxLength30]}
-        type={'password'}
+        type={"password"}
       />
-      <div>
-        <Field component={Input} type={"checkbox"} name={"rememberMe"} />{" "}
-        remember me
+      <div className={s.check}>
+        <Field component={Input} type={"checkbox"} name={"rememberMe"} />
+        <span>rememberMe</span>
       </div>
       <button className={s.button}>Login</button>
     </form>

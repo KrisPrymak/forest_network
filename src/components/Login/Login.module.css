@@ -1,6 +1,8 @@
 .form {
     width: 200px;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .form input {
@@ -18,4 +20,28 @@
 
 .button:hover {
     background-color: rgba(251, 101, 118, .8);
+}
+
+.commonError {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px #FB6376 solid;
+    padding: 5px;
+    background-color: rgba(251, 99, 118, .2);
+    border-radius: 5px;
+}
+
+.errorImg {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+}
+
+.check span {
+    margin-left: -180px;
 }
