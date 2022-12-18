@@ -50,3 +50,7 @@
     padding: 10px;
     cursor: pointer;
 }
+
+.button:hover {
+    background-color: rgba(251, 101, 118, .8);
+}
