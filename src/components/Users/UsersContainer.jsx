@@ -62,6 +62,5 @@ export default compose(
     setCurrentPage,
     toggleIsFollowingInProgress,
     getUsers,
-  }),
-  withAuthNavigate
+  })
 )(UsersContAPI);

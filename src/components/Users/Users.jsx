@@ -12,9 +12,9 @@ const Users = (props) => {
     pages.push(i);
   }
 
-  if (pages.length > 10) {
-    let newPages = [...pages.slice(0, 5), "...", ...pages.slice(-5)];
-    pages = newPages;
+  if(pages.length > 80) {
+    let newP = pages.reverse().slice(0, 80);
+    pages = newP;
   }
 
   return (
@@ -33,7 +33,6 @@ const Users = (props) => {
           );
         })}
       </div>
-
       {props.users.map((u) => (
         <div className={s.user}>
           <div className={s.left}>
