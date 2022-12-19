@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/forest_network/static/css/main.9924e294.css",
+    "main.js": "/forest_network/static/js/main.38b872bd.js",
+    "static/js/787.107defc7.chunk.js": "/forest_network/static/js/787.107defc7.chunk.js",
+    "static/media/preloader.gif": "/forest_network/static/media/preloader.b2a8fa3d8baba9fc720f.gif",
+    "static/media/userAvatar.png": "/forest_network/static/media/userAvatar.8165164489bd9a93f89f.png",
+    "index.html": "/forest_network/index.html",
+    "main.9924e294.css.map": "/forest_network/static/css/main.9924e294.css.map",
+    "main.38b872bd.js.map": "/forest_network/static/js/main.38b872bd.js.map",
+    "787.107defc7.chunk.js.map": "/forest_network/static/js/787.107defc7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9924e294.css",
+    "static/js/main.38b872bd.js"
+  ]
+}
