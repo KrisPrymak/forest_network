@@ -2,7 +2,6 @@ import React from "react";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import s from "./Dialogs.module.css";
-import { Navigate } from "react-router-dom";
 import DialogsReduxForm from "./DialogsForm";
 
 const Dialogs = (props) => {

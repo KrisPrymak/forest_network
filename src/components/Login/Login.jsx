@@ -3,6 +3,7 @@ import LoginReduxForm from './LoginForm';
 import { connect } from 'react-redux';
 import { login } from '../../Redux/authReducer';
 import { Navigate } from 'react-router-dom';
+import s from './Login.module.css';
 
 
 const Login = (props) => {
@@ -18,6 +19,10 @@ const Login = (props) => {
     return <div>
         <h1>Login</h1>
         <LoginReduxForm onSubmit={onSubmit}/>
+        <ul className={s.testAcc}>Тестовый аккаунт
+            <li>Email: free@samuraijs.com</li>
+            <li>Password: free</li>
+        </ul>
     </div>
 }
 

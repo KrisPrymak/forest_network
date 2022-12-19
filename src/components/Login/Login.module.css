@@ -45,3 +45,11 @@
 .check span {
     margin-left: -180px;
 }
+
+.testAcc {
+    padding: 20px;
+}
+
+.testAcc li {
+    margin-left: 10px;
+}

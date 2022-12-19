@@ -24,11 +24,11 @@ const ProfileInfo = (props) => {
         <div className={s.textInfo}>
         <ul className={s.contacts}>
           <div className={s.contactsTitle}>Contacts</div>
-          {Object.entries(props.profile.contacts).map(c => {
+          {/* {Object.entries(props.profile.contacts).map(c => {
             if (c[1] !== null && c[1] !== '') {
                 return <li><span className={s.socialsName}>{c[0]}</span>: {c[1]}</li>
             }
-          })}
+          })} */}
         </ul>
         <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
         </div>
