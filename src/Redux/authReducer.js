@@ -31,19 +31,18 @@ export const setAuthUserData = (userId, email, login, isAuth) => {
 };
 
 export const getAuth = () => {
-  return (dispatch) => {
-    return authAPI.getAuth().then((data) => {
-      if (data.resultCode === 0) {
-        let { id, email, login } = data.data;
-        dispatch(setAuthUserData(id, email, login, true));
-      }
-    });
+  return async (dispatch) => {
+    const data = await authAPI.getAuth();
+    if (data.resultCode === 0) {
+      let { id, email, login } = data.data;
+      dispatch(setAuthUserData(id, email, login, true));
+    }
   };
 };
 
 export const login = (email, password, rememberMe) => {
-  return (dispatch) => {
-    authAPI.login(email, password, rememberMe).then((response) => {
+  return async (dispatch) => {
+    const response = await authAPI.login(email, password, rememberMe)
       if (response.data.resultCode === 0) {
         dispatch(getAuth());
       } else {
@@ -53,17 +52,15 @@ export const login = (email, password, rememberMe) => {
             : "Some error";
         dispatch(stopSubmit('login', { _error: errorText }));
       }
-    });
   };
 };
 
 export const logout = () => {
-  return (dispatch) => {
-    authAPI.logout().then((response) => {
+  return async (dispatch) => {
+    const response = await authAPI.logout();
       if (response.data.resultCode === 0) {
         dispatch(setAuthUserData(null, null, null, false));
       }
-    });
   };
 };
 

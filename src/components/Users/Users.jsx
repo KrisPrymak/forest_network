@@ -1,83 +1,16 @@
 import React from "react";
 import s from "./Users.module.css";
-import userAvatar from "./../../assets/images/userAvatar.png";
-import { NavLink } from "react-router-dom";
-import statusImg from "./../../assets/images/statusimg.png";
+import Paginator from "../commons/Paginator/Paginator";
+import User from "./User";
 
 const Users = (props) => {
-  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-  let pages = [];
-
-  for (let i = 1; i <= pagesCount; i++) {
-    pages.push(i);
-  }
-
-  if(pages.length > 80) {
-    let newP = pages.reverse().slice(0, 80);
-    pages = newP;
-  }
 
   return (
     <div className={s.users}>
-      <div className={s.pages}>
-        {pages.map((p) => {
-          return (
-            <span 
-              className={props.currentPage === p && s.selectedPage}
-              onClick={() => {
-                props.onPageChanged(p);
-              }}
-            >
-              {p}
-            </span>
-          );
-        })}
-      </div>
+      <Paginator currentPage={props.currentPage} onPageChanged={props.onPageChanged} totalUsersCount={props.totalUsersCount} pageSize={props.pageSize} />
+      
       {props.users.map((u) => (
-        <div className={s.user}>
-          <div className={s.left}>
-            <NavLink to={"./../profile/" + u.id}>
-              <img
-                className={s.ava}
-                src={u.photos.small ? u.photos.small : userAvatar}
-                alt="ava"
-              />
-            </NavLink>
-            <div>
-              {u.followed ? (
-                <button disabled={props.followingInProgress.some(p => p === u.id)}
-                  className={s.unfollow}
-                  onClick={() => {
-                    props.unfollow(u.id);
-                  }}
-                >
-                  Отписка
-                </button>
-              ) : (
-                <button disabled={props.followingInProgress.some(p => p === u.id)}
-                  className={s.follow}
-                  onClick={() => {
-                    props.follow(u.id);
-                  }}
-                >
-                  Подписаться
-                </button>
-              )}
-            </div>
-          </div>
-          <div className={s.right}>
-            <div className={s.userInfo}>
-              <p className={s.name}>{u.name}</p>
-              {/* <p
-                    className={s.location}
-                    >{`${u.location.city}, ${u.location.country}`}</p> */}
-            </div>
-            <p className={s.status}>
-              <img className={s.statusImg} src={statusImg} alt="statusImg" />
-              {u.status ? u.status : "..."}
-            </p>
-          </div>
-        </div>
+        <User user={u} followingInProgress={props.followingInProgress} unfollow={props.unfollow} follow={props.follow}/>
       ))}
 
       <div>Total accounts: {props.totalUsersCount}</div>

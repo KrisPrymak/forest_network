@@ -107,28 +107,28 @@ let musicReducer = (state = initialState, action) => {
 export const playSongAC = (id) => {
   return {
     type: PLAY_SONG,
-    id: id,
+    id,
   };
 };
 
 export const pauseSongAC = (id) => {
   return {
     type: PAUSE_SONG,
-    id: id,
+    id,
   };
 };
 
 export const addSongAC = (id) => {
   return {
     type: ADD_SONG,
-    id: id,
+    id,
   };
 };
 
 export const deleteSongAC = (id) => {
   return {
     type: DELETE_SONG,
-    id: id,
+    id,
   };
 };
 
