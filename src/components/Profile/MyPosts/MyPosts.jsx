@@ -10,6 +10,7 @@ const MyPosts = React.memo((props) => {
 
   let onAddPost = (values) => {
     props.addPost(values.postText);
+    values.postText = '';
   };
 
   return (
