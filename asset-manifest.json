@@ -1,17 +1,29 @@
 {
   "files": {
-    "main.css": "/forest_network/static/css/main.9924e294.css",
-    "main.js": "/forest_network/static/js/main.38b872bd.js",
+    "main.css": "/forest_network/static/css/main.f1ae9adc.css",
+    "main.js": "/forest_network/static/js/main.cb894647.js",
+    "static/css/47.790a1634.chunk.css": "/forest_network/static/css/47.790a1634.chunk.css",
+    "static/js/47.23e8689b.chunk.js": "/forest_network/static/js/47.23e8689b.chunk.js",
+    "static/css/866.86c157e5.chunk.css": "/forest_network/static/css/866.86c157e5.chunk.css",
+    "static/js/866.63f0d272.chunk.js": "/forest_network/static/js/866.63f0d272.chunk.js",
+    "static/css/255.4f06679c.chunk.css": "/forest_network/static/css/255.4f06679c.chunk.css",
+    "static/js/255.f8c55073.chunk.js": "/forest_network/static/js/255.f8c55073.chunk.js",
     "static/js/787.107defc7.chunk.js": "/forest_network/static/js/787.107defc7.chunk.js",
     "static/media/preloader.gif": "/forest_network/static/media/preloader.b2a8fa3d8baba9fc720f.gif",
     "static/media/userAvatar.png": "/forest_network/static/media/userAvatar.8165164489bd9a93f89f.png",
     "index.html": "/forest_network/index.html",
-    "main.9924e294.css.map": "/forest_network/static/css/main.9924e294.css.map",
-    "main.38b872bd.js.map": "/forest_network/static/js/main.38b872bd.js.map",
+    "main.f1ae9adc.css.map": "/forest_network/static/css/main.f1ae9adc.css.map",
+    "main.cb894647.js.map": "/forest_network/static/js/main.cb894647.js.map",
+    "47.790a1634.chunk.css.map": "/forest_network/static/css/47.790a1634.chunk.css.map",
+    "47.23e8689b.chunk.js.map": "/forest_network/static/js/47.23e8689b.chunk.js.map",
+    "866.86c157e5.chunk.css.map": "/forest_network/static/css/866.86c157e5.chunk.css.map",
+    "866.63f0d272.chunk.js.map": "/forest_network/static/js/866.63f0d272.chunk.js.map",
+    "255.4f06679c.chunk.css.map": "/forest_network/static/css/255.4f06679c.chunk.css.map",
+    "255.f8c55073.chunk.js.map": "/forest_network/static/js/255.f8c55073.chunk.js.map",
     "787.107defc7.chunk.js.map": "/forest_network/static/js/787.107defc7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9924e294.css",
-    "static/js/main.38b872bd.js"
+    "static/css/main.f1ae9adc.css",
+    "static/js/main.cb894647.js"
   ]
 }
