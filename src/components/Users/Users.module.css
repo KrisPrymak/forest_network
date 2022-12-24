@@ -102,6 +102,25 @@
     font-size: 20px;
 }
 
+.previous img, .next img {
+    width: 20px;
+    background-color: #F2DDDD;
+}
+
+.previous, .next {
+    border: none;
+    background-color: #F2DDDD;
+    cursor: pointer;
+}
+
+.previous img {
+    margin-right: 10px;
+}
+
+.next img {
+    margin-left: 5px;
+}
+
 
 
 
