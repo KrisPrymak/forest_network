@@ -28,7 +28,7 @@ const Paginator = ({currentPage, onPageChanged, totalUsersCount, pageSize, porti
           .map((p) => {
           return (
             <span 
-              className={currentPage === p && s.selectedPage}
+              className={ cn({[s.selectedPage]: currentPage === p})}
               onClick={() => {
                 onPageChanged(p);
               }}

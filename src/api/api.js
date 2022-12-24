@@ -43,10 +43,10 @@ export const authAPI = {
 };
 
 export const profileAPI = {
-  getUserProfile(userId) {
-    return instance
-            .get(`profile/${userId}`)
-            .then(response => response.data)
+  async getUserProfile(userId) {
+    const response = await instance
+      .get(`profile/${userId}`);
+    return response.data;
   },
   getStatus(userId) {
     return instance
@@ -58,6 +58,16 @@ export const profileAPI = {
               status: status
             })
   },
+  savePhoto(photos) {
+    const formData = new FormData();
+    formData.append('image', photos)
+    return instance
+            .put('profile/photo', formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+            })
+  }
 }
 
 // const instance = axios.create({
