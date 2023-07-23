@@ -7,6 +7,11 @@ const Navbar = () => {
   return (
     <nav className={s.navbar}>
       <div>
+        <NavLink to="/chatPage" className={activeItemClass}>
+          Chat Page
+        </NavLink>
+      </div>
+      <div>
         <NavLink to="/profile" className={activeItemClass}>
           Profile
         </NavLink>

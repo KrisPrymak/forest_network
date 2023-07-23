@@ -19,17 +19,17 @@ let initialState = {
   currentPage: 1,
   isFetching: false,
   followingInProgress: [] as Array<number>, //array of users id
-  filter: {
-    term: '',
-    friend: null as null | boolean
-}
+//   filter: {
+//     term: '',
+//     friend: null as null | boolean
+// }
 };
 
-type InitialState = typeof initialState
+export type InitialState = typeof initialState
 type ActionsTypes = InferActionsTypes<typeof actions>
 type ThunkType = BaseThunkType<ActionsTypes>
 
-const actions = {
+export const actions = {
   followSuccess: (userId: number) => ({type: 'FOLLOW', userId} as const),
   unfollowSuccess: (userId: number) => ({type: 'UNFOLLOW', userId} as const),
   setUsers: (usersArray: Array<UserType>) => ({type: 'SET_USERS', usersArray} as const),

@@ -22,6 +22,8 @@ const MusicContainer = React.lazy(() =>
   import("./components/Music/MusicContainer.tsx")
 );
 
+const ChatPage = React.lazy(() => import('./components/ChatPage/ChatPage'))
+
 class App extends React.Component {
   // catchAllUnhandledErrors = (promiseRejectionEvent) => {
   //   alert("some error");
@@ -58,6 +60,7 @@ class App extends React.Component {
               <Route path="/music" element={<MusicContainer />} />
               <Route path="/users" element={<UsersContainer />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/chatPage" element={<ChatPage />} />
             </Routes>
           </Suspense>
         </div>
